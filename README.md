@@ -57,9 +57,9 @@ The visual analysis suggests areas for HR to investigate further rather than cau
 
 ```text
 salifort-employee-attrition-eda/
-â”œâ”€â”€ Salifort_Motors_Employee_Attrition_EDA.ipynb
-â”œâ”€â”€ requirements.txt
-â””â”€â”€ README.md
+Salifort_Motors_Employee_Attrition_EDA.ipynb
+requirements.txt
+README.md
 ```
 
 ## Run Locally
