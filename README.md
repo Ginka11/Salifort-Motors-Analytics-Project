@@ -1,68 +1,65 @@
-# Salifort Motors Employee Churn Analysis
+# Salifort Motors Employee Attrition EDA
 
-An HR analytics capstone project completed as part of the **Google Advanced Data Analytics Professional Certificate**. The project explores employee attrition drivers and develops a binary classification workflow to support retention decisions.
+An exploratory HR analytics capstone completed through the **Google Advanced Data Analytics Professional Certificate**. The notebook examines employee attrition patterns and translates the observed data into questions and recommendations for HR.
+
+> This repository intentionally presents the work as **exploratory data analysis**, not as a validated prediction model. The committed notebook does not contain estimator fitting or model evaluation code, so earlier model-performance claims are not published here.
 
 ## Business Question
 
-What factors are most strongly associated with employees leaving Salifort Motors, and how can HR identify higher-risk employee groups?
+Which employee characteristics and workload patterns are associated with attrition in the supplied Salifort Motors dataset?
 
 ## Dataset
 
-- 14,999 employee records
-- 10 original variables
-- Target: `left`
-- Main features: satisfaction, evaluation score, project count, monthly hours, tenure, promotion history, department, salary and work accidents
+The persisted notebook outputs verify:
 
-## Workflow
+- **14,999** original rows and **10** variables
+- **3,008** exact duplicate rows identified
+- **11,991** records after duplicate removal
+- **10,000** employees who stayed
+- **1,991** employees who left
+- **16.60%** attrition rate after duplicate removal
 
-1. Defined the HR problem and stakeholders using the PACE framework.
-2. Cleaned column names and reviewed data quality.
-3. Explored attrition patterns with Pandas, Matplotlib and Seaborn.
-4. Prepared categorical variables and created a stratified train/test split.
-5. Compared an interpretable Logistic Regression baseline with a tree-based approach.
-6. Translated findings into retention recommendations and ethical-use guidance.
+The course notebook uses `HR_capstone_dataset.csv`. The repository does not redistribute that CSV. The underlying public dataset is available from [HR Analytics and Job Prediction on Kaggle](https://www.kaggle.com/datasets/mfaisalqureshi/hr-analytics-and-job-prediction); review its dataset page for attribution and usage terms.
 
-## Key Findings
+## Analysis Completed
 
-- Low satisfaction was the strongest recurring indicator of attrition.
-- Employees with very high project loads and long monthly hours showed clear burnout risk.
-- The 3–5 year tenure range, especially around year 4, was a critical retention period.
-- High evaluation scores did not protect against turnover when workload was excessive.
+- Standardized and reviewed the source columns.
+- Checked data types, missing values, duplicates, and tenure outliers.
+- Removed exact duplicate rows for the analytical dataframe.
+- Compared attrition across:
+  - satisfaction level
+  - project count
+  - monthly working hours
+  - salary band
+  - evaluation score
+  - tenure
+  - department
+- Documented responsible-use considerations for employee analytics.
 
-## Reported Model Results
+## HR Questions Raised by the EDA
 
-The notebook reports approximately:
+The visual analysis suggests areas for HR to investigate further rather than causal conclusions:
 
-- Logistic Regression accuracy: **82%**
-- Random Forest F1-score: **94–95%**
-- Random Forest precision: **97%**
-- Random Forest recall: **91%**
-
-These figures are retained as project results from the completed notebook. A production implementation would require additional validation, leakage checks, fairness testing and monitoring.
+- Whether extreme workloads coincide with lower retention.
+- Whether project allocation is balanced across teams.
+- Whether the 3â€“5 year tenure period needs targeted career conversations.
+- Whether promotion, salary, and workload policies interact with satisfaction.
 
 ## Recommendations
 
-- Cap concurrent project assignments at five where operationally feasible.
-- Flag sustained monthly workloads above roughly 220 hours for review.
-- Introduce stay interviews and career-development discussions near the fourth year of tenure.
-- Reward sustainable output rather than overtime alone.
-- Use predictions to support employees, not to penalize or surveil them.
-
-## Technologies
-
-- Python
-- Pandas and NumPy
-- Matplotlib and Seaborn
-- Scikit-learn
-- Jupyter Notebook
+- Monitor sustained workload and project allocation at team level.
+- Use stay interviews to understand employee experience before attrition occurs.
+- Review promotion and career-path opportunities alongside satisfaction signals.
+- Treat analytical findings as prompts for support, not as grounds for punitive employee decisions.
+- Validate any future predictive model for leakage, fairness, calibration, and drift before use.
 
 ## Repository Contents
 
 ```text
 Salifort-Motors-Analytics-Project/
-├── Salifort_Motors_Employee_Churn_Prediction.ipynb
-├── requirements.txt
-└── README.md
+â”œâ”€â”€ Salifort_Motors_Employee_Attrition_EDA.ipynb
+â”œâ”€â”€ requirements.txt
+â””â”€â”€ README.md
 ```
 
 ## Run Locally
@@ -74,4 +71,13 @@ pip install -r requirements.txt
 jupyter notebook
 ```
 
-Open `Salifort_Motors_Employee_Churn_Prediction.ipynb` and run the cells in order. The course notebook originally loaded the dataset in its hosted environment, so a local run may require adding the source CSV and updating its path.
+Download the dataset, save it as `HR_capstone_dataset.csv` beside the notebook, then run `Salifort_Motors_Employee_Attrition_EDA.ipynb` in order.
+
+## Reproducibility Status
+
+The exploratory sections contain persisted outputs, but the notebook was originally completed in a hosted course environment. A future modeling iteration should start from a clean kernel, add an explicit preprocessing pipeline, fit and evaluate candidate models, and publish only metrics produced by committed code.
+
+## Technologies
+
+Python Â· Pandas Â· NumPy Â· Matplotlib Â· Seaborn Â· Jupyter Notebook
+
