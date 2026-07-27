@@ -1,22 +1,83 @@
-# Salifort-Motors-Analytics-Project
-Capstone project from Google Advanced Data Analytics
-# Salifort Motors: Strategic HR Analytics & Employee Churn Prediction 🚗💼
+# Salifort Motors Employee Attrition EDA
 
-## 📌 Project Overview
-This project is the official **Capstone Project** for the **Google Data Analytics Professional Certificate**. The goal was to help the HR department of Salifort Motors understand the factors driving employee turnover and build a predictive model to identify at-risk employees.
+An exploratory HR analytics capstone completed through the **Google Advanced Data Analytics Professional Certificate**. The notebook examines employee attrition patterns and translates the observed data into questions and recommendations for HR.
 
-## 📈 Key Insights & Results
-- **Burnout Identification:** Employees with 7 projects had a **100% turnover rate**.
-- **Critical Tenure:** The 4-year mark is a significant turning point for employee churn.
-- **Overwork Factor:** High-performing employees working over 250 hours/month are at high risk of leaving.
-- **Model Performance:** The **Random Forest** model achieved a **95% F1-score**, successfully identifying 91% of potential churners.
+> This repository intentionally presents the work as **exploratory data analysis**, not as a validated prediction model. The committed notebook does not contain estimator fitting or model evaluation code, so earlier model-performance claims are not published here.
 
-## 🛠️ Skills & Tools
-- **Framework:** PACE (Plan, Analyze, Construct, Execute)
-- **Language:** Python
-- **Libraries:** Pandas, Seaborn, Scikit-Learn (Random Forest, Logistic Regression)
+## Business Question
 
-## 💡 Recommendations
-- Limit project assignments to a maximum of 5 per employee.
-- Conduct "Stay Interviews" specifically for 4th-year employees.
-- Monitor monthly hours and flag workloads exceeding 220 hours.
+Which employee characteristics and workload patterns are associated with attrition in the supplied Salifort Motors dataset?
+
+## Dataset
+
+The persisted notebook outputs verify:
+
+- **14,999** original rows and **10** variables
+- **3,008** exact duplicate rows identified
+- **11,991** records after duplicate removal
+- **10,000** employees who stayed
+- **1,991** employees who left
+- **16.60%** attrition rate after duplicate removal
+
+The course notebook uses `HR_capstone_dataset.csv`. The repository does not redistribute that CSV. The underlying public dataset is available from [HR Analytics and Job Prediction on Kaggle](https://www.kaggle.com/datasets/mfaisalqureshi/hr-analytics-and-job-prediction); review its dataset page for attribution and usage terms.
+
+## Analysis Completed
+
+- Standardized and reviewed the source columns.
+- Checked data types, missing values, duplicates, and tenure outliers.
+- Removed exact duplicate rows for the analytical dataframe.
+- Compared attrition across:
+  - satisfaction level
+  - project count
+  - monthly working hours
+  - salary band
+  - evaluation score
+  - tenure
+  - department
+- Documented responsible-use considerations for employee analytics.
+
+## HR Questions Raised by the EDA
+
+The visual analysis suggests areas for HR to investigate further rather than causal conclusions:
+
+- Whether extreme workloads coincide with lower retention.
+- Whether project allocation is balanced across teams.
+- Whether the 3â€“5 year tenure period needs targeted career conversations.
+- Whether promotion, salary, and workload policies interact with satisfaction.
+
+## Recommendations
+
+- Monitor sustained workload and project allocation at team level.
+- Use stay interviews to understand employee experience before attrition occurs.
+- Review promotion and career-path opportunities alongside satisfaction signals.
+- Treat analytical findings as prompts for support, not as grounds for punitive employee decisions.
+- Validate any future predictive model for leakage, fairness, calibration, and drift before use.
+
+## Repository Contents
+
+```text
+Salifort-Motors-Analytics-Project/
+â”œâ”€â”€ Salifort_Motors_Employee_Attrition_EDA.ipynb
+â”œâ”€â”€ requirements.txt
+â””â”€â”€ README.md
+```
+
+## Run Locally
+
+```bash
+python -m venv .venv
+source .venv/bin/activate  # Windows: .venv\Scripts\activate
+pip install -r requirements.txt
+jupyter notebook
+```
+
+Download the dataset, save it as `HR_capstone_dataset.csv` beside the notebook, then run `Salifort_Motors_Employee_Attrition_EDA.ipynb` in order.
+
+## Reproducibility Status
+
+The exploratory sections contain persisted outputs, but the notebook was originally completed in a hosted course environment. A future modeling iteration should start from a clean kernel, add an explicit preprocessing pipeline, fit and evaluate candidate models, and publish only metrics produced by committed code.
+
+## Technologies
+
+Python Â· Pandas Â· NumPy Â· Matplotlib Â· Seaborn Â· Jupyter Notebook
+
