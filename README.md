@@ -56,7 +56,7 @@ The visual analysis suggests areas for HR to investigate further rather than cau
 ## Repository Contents
 
 ```text
-Salifort-Motors-Analytics-Project/
+salifort-employee-attrition-eda/
 â”œâ”€â”€ Salifort_Motors_Employee_Attrition_EDA.ipynb
 â”œâ”€â”€ requirements.txt
 â””â”€â”€ README.md
@@ -79,5 +79,5 @@ The exploratory sections contain persisted outputs, but the notebook was origina
 
 ## Technologies
 
-Python Â· Pandas Â· NumPy Â· Matplotlib Â· Seaborn Â· Jupyter Notebook
+Python | Pandas | NumPy | Matplotlib | Seaborn | Jupyter Notebook
 
